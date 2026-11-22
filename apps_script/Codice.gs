@@ -2,6 +2,7 @@
  * Raccolta anonima delle schede. Da incollare in Google Apps Script (vedi README.md, passo 1).
  * Salva una riga per scheda in un foglio Google. Non registra IP né account.
  */
+var ID_FOGLIO = '17dh1HIVWBuHCR7Sfp9f_LOaSzOTA7ITBmcjD-2pD5k8';   // foglio che riceve le schede
 var NOME_FOGLIO = 'Risposte';
 var INTESTAZIONE = ['ricevuta', 'fase', 'codice', 'versione', 'risposte_json'];
 
@@ -17,7 +18,7 @@ function doPost(e) {
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
-    var f = SpreadsheetApp.getActive().getSheetByName(NOME_FOGLIO) || SpreadsheetApp.getActive().insertSheet(NOME_FOGLIO);
+    var f = SpreadsheetApp.openById(ID_FOGLIO).getSheetByName(NOME_FOGLIO) || SpreadsheetApp.openById(ID_FOGLIO).insertSheet(NOME_FOGLIO);
     if (f.getLastRow() === 0) { f.appendRow(INTESTAZIONE); }
     f.appendRow([new Date(), fase, "'" + codice, String(p.v || ''), "'" + json]);   // l'apice impedisce l'esecuzione di formule
   } finally { lock.releaseLock(); }
@@ -29,7 +30,7 @@ function risposta_() { return ContentService.createTextOutput('ok'); }
 
 /** Facoltativo: da eseguire a mano dopo il corso per cancellare le righe più vecchie di N giorni. */
 function cancellaVecchie(giorni) {
-  var f = SpreadsheetApp.getActive().getSheetByName(NOME_FOGLIO); if (!f) return;
+  var f = SpreadsheetApp.openById(ID_FOGLIO).getSheetByName(NOME_FOGLIO); if (!f) return;
   var limite = new Date(Date.now() - (giorni || 90) * 86400000);
   var v = f.getDataRange().getValues();
   for (var i = v.length - 1; i >= 1; i--) { if (v[i][0] instanceof Date && v[i][0] < limite) { f.deleteRow(i + 1); } }
