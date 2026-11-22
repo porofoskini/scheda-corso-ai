@@ -5,7 +5,7 @@ window.CONFIG = {
   TITOLO: "Scheda d'ingresso e d'uscita",
   CORSO: "IA agentica con Antigravity",
   // Da compilare: chi raccoglie i dati (titolare) e come contattarlo per cancellare le risposte.
-  TITOLARE: "[Nome del formatore o dell'ente]",
-  CONTATTO: "[indirizzo e-mail o altro contatto]",
+  TITOLARE: "Gennaro Aurilia, formatore del corso",
+  CONTATTO: "chiedilo di persona al formatore durante il corso, indicando il tuo codice",
   GIORNI_CONSERVAZIONE: 90
 };
