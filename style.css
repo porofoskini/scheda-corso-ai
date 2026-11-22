@@ -1,0 +1,53 @@
+:root{--carta:#F6F2EA;--bianco:#fff;--inchiostro:#1B1F27;--blu:#14213D;--ambra:#F2A93B;--grigio:#4A5361;--bordo:#B9B2A3;--ok:#1F7447;--rosso:#B03A26;--r:12px}
+*{box-sizing:border-box}
+html{font-size:112.5%} /* 18px */
+body{margin:0;background:var(--carta);color:var(--inchiostro);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.salta{position:absolute;left:-999px;top:0;background:var(--blu);color:#fff;padding:.6rem 1rem;z-index:10}
+.salta:focus{left:0}
+.testata{background:var(--blu);color:#fff;padding:.7rem 1rem}
+.corso{margin:0;font-weight:700;letter-spacing:.01em}
+main{max-width:42rem;margin:0 auto;padding:1rem 1rem 2rem}
+h1,h2{font-family:Cambria,Georgia,"Times New Roman",serif;color:var(--blu);line-height:1.2}
+h1{font-size:1.7rem;margin:.5rem 0}
+h2{font-size:1.25rem;margin:1.5rem 0 .5rem}
+p{margin:.5rem 0}
+.nota{color:var(--grigio);font-size:.95rem}
+.riquadro{background:var(--bianco);border:2px solid var(--bordo);border-radius:var(--r);padding:1rem;margin:1rem 0}
+.avviso{background:#FCEBCB;border:2px solid var(--ambra);border-radius:var(--r);padding:.8rem 1rem;margin:1rem 0}
+label.campo{display:block;font-weight:700;margin-bottom:.3rem}
+input[type=text],textarea{width:100%;font:inherit;padding:.7rem .8rem;border:2px solid var(--blu);border-radius:var(--r);background:#fff;color:var(--inchiostro)}
+textarea{min-height:6rem;resize:vertical}
+fieldset{border:2px solid var(--bordo);border-radius:var(--r);background:var(--bianco);padding:.8rem 1rem 1rem;margin:1rem 0}
+legend{font-weight:700;padding:0 .4rem;font-size:1.05rem}
+.opz{display:flex;align-items:center;gap:.7rem;min-height:3rem;padding:.3rem .5rem;border-radius:8px;cursor:pointer}
+.opz:hover{background:#F6F2EA}
+.opz input{width:1.5rem;height:1.5rem;flex:0 0 auto;accent-color:var(--blu)}
+.scala{display:flex;flex-wrap:wrap;gap:.4rem}
+.scala .opz{border:2px solid var(--bordo);min-width:3.2rem;justify-content:center;flex-direction:column;gap:.1rem;padding:.4rem}
+.btn{display:block;width:100%;font:inherit;font-weight:700;background:var(--blu);color:#fff;border:3px solid var(--blu);border-radius:var(--r);padding:.9rem 1rem;margin:.6rem 0;min-height:3.2rem;cursor:pointer;text-align:center;text-decoration:none}
+.btn.secondario{background:#fff;color:var(--blu)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.link{font:inherit;background:none;border:none;color:var(--blu);text-decoration:underline;cursor:pointer;padding:.3rem}
+a{color:var(--blu)}
+:focus-visible{outline:4px solid var(--ambra);outline-offset:2px;box-shadow:0 0 0 2px var(--blu)}
+.stato-scheda{display:flex;justify-content:space-between;gap:.5rem;align-items:center}
+.badge{display:inline-block;padding:.1rem .6rem;border-radius:99px;border:2px solid var(--blu);font-size:.9rem;font-weight:700;background:#fff}
+.badge.ok{border-color:var(--ok);color:var(--ok)}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{border:1px solid var(--bordo);padding:.5rem;text-align:left;vertical-align:top}
+th{background:var(--blu);color:#fff}
+.cambiata{font-weight:700;color:var(--blu)}
+.contatore{text-align:right;font-size:.85rem;color:var(--grigio)}
+.piede{max-width:42rem;margin:0 auto;padding:1rem;color:var(--grigio);font-size:.95rem}
+.trappola{position:absolute;left:-9999px;height:0;overflow:hidden}
+.barra{background:#e6e0d3;border-radius:6px;height:1.1rem;position:relative;overflow:hidden}
+.barra>span{display:block;height:100%;background:var(--blu)}
+.barra.u>span{background:var(--ambra)}
+.riga-stat{display:grid;grid-template-columns:8rem 1fr 3rem;gap:.5rem;align-items:center;margin:.2rem 0}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .08s}.btn:active{transform:scale(.99)}}
+@media (min-width:44rem){.scala .opz{min-width:3.6rem}}
+@media print{.testata,.piede,.btn,.salta{display:none}body{background:#fff}}
+.scorri{overflow-x:auto;position:relative}
+.zero{margin:0}
+.sopra{margin-top:.5rem}

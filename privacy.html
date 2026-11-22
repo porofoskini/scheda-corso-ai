@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+<title>Privacy · Scheda corso IA</title><link rel="stylesheet" href="style.css"></head>
+<body><header class="testata"><p class="corso">Scheda d'ingresso e d'uscita</p></header>
+<main><h1>Privacy, in breve</h1>
+<p class="avviso"><strong>Testo da completare prima dell'uso</strong>: titolare, contatto e conservazione vanno compilati dal formatore e, se serve, verificati con la scuola. Non è una consulenza legale.</p>
+<h2>Chi raccoglie</h2><p>Titolare: <strong id="tit"></strong>. Contatto: <strong id="con"></strong>.</p>
+<h2>Cosa raccoglie la scheda</h2>
+<ul><li>Un <strong>codice inventato da te</strong> (non nome né cognome).</li>
+<li>Le risposte alle domande: uso dell'IA, aspettative, preoccupazioni, bisogni di accessibilità (facoltativo).</li>
+<li>Non raccoglie nome, e-mail, indirizzo IP né posizione dall'app. Il servizio che riceve i dati (Google) può tenere registri tecnici suoi.</li></ul>
+<h2>Dove restano</h2><p>Sempre sul tuo dispositivo. Solo se spunti la casella dell'invio, una copia anonima arriva al formatore in un foglio di calcolo.</p>
+<h2>A che cosa serve</h2><p>Adattare il corso e vedere, in forma aggregata, che cosa cambia tra ingresso e uscita. Nessun uso diverso.</p>
+<h2>Attenzione ai testi liberi</h2><p>Non scrivere nomi o dati di alunni o colleghi. Chi li legge potrebbe poter risalire a una persona, anche senza il tuo nome. Le risposte con dati personali verranno cancellate.</p>
+<h2>I tuoi diritti</h2><p>Puoi cancellare i dati dal tuo dispositivo (pagina «I miei dati») e chiedere al contatto la cancellazione della copia ricevuta, indicando il tuo codice. Il formatore le cancella entro il periodo indicato: <strong id="gg"></strong> giorni dalla fine del corso.</p>
+<a class="btn" href="index.html">Torna alla scheda</a></main>
+<script src="config.js"></script>
+<script>var C=window.CONFIG||{};document.getElementById('tit').textContent=C.TITOLARE||'';document.getElementById('con').textContent=C.CONTATTO||'';document.getElementById('gg').textContent=C.GIORNI_CONSERVAZIONE||'';</script>
+</body></html>
